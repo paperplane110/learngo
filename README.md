@@ -161,3 +161,24 @@ func (node Node) Print() {
 - or `go get -u <package>@<version>`: specify the version
 - `go mod tidy`: clean go.sum
 - `go build ./...`: build all go file and pull relative packages
+
+
+## Week 2
+
+### 2-1 Interface
+
+When to use interface: decouple the code, only remain the logic. 
+Especially in Strong type language.
+
+```go
+// Indicates the "retriever" has Get method.
+// Users don't need to worry about what the specific type of the retriever is.
+type retriever interface {
+	Get(string) string
+	Delete(string) string
+}
+```
+
+### 2-2 Interface & Duck typing
+
+> ***Duck typing***: 描述外部行为，而非内部结构

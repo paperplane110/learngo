@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/paperplane110/learngo/queue"
+	"github.com/paperplane110/learngo/week1/queue"
 )
 
 func main() {

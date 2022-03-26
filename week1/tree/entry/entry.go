@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/paperplane110/learngo/tree"
+	"github.com/paperplane110/learngo/week1/tree"
 )
 
 //type MyNode struct {
