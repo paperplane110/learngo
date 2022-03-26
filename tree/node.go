@@ -1,46 +1,31 @@
-package main
+package tree
 
 import "fmt"
 
-type treeNode struct {
-	value       int
-	left, right *treeNode
+type Node struct {
+	Value       int
+	Left, Right *Node
 }
 
-func (node treeNode) print() {
-	fmt.Println(node.value)
+func (node Node) Print() {
+	fmt.Println(node.Value)
 }
 
-func (node *treeNode) setValue(value int) {
-	node.value = value
+func (node *Node) SetValue(value int) {
+	node.Value = value
 }
 
-func (node *treeNode) traverse() {
+func (node *Node) Traverse() {
 	if node == nil {
 		return
 	}
-	node.left.traverse()
-	node.print()
-	node.right.traverse()
+	node.Left.Traverse()
+	node.Print()
+	node.Right.Traverse()
 }
 
-func createNode(value int) *treeNode {
+func createNode(value int) *Node {
 	// 使用工厂函数来实现自定义的构造函数
 	// 返回了局部变量的地址
-	return &treeNode{value: value}
-}
-
-func main() {
-	var root treeNode
-
-	root = treeNode{value: 1}
-	root.right = &treeNode{}
-	root.left = &treeNode{2, nil, nil}
-	root.right.right = new(treeNode)
-	fmt.Println(root)
-
-	fmt.Println()
-	root.right.setValue(3)
-	root.right.print()
-	root.traverse()
+	return &Node{Value: value}
 }

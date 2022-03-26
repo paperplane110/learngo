@@ -98,3 +98,43 @@ for k, v := range m {
 	fmt.Println(k, v)
 }
 ```
+
+### 1-17 Struct and method
+
+1. Declare a `struct`
+
+Name is using CamelCase. 
+The first letter is top-case means the var is `Public`, which would be exposed to user.
+The first letter is lowercase means that the var is `private`.
+
+```go
+type Node struct {
+	Value       int
+	Left, Right *Node
+}
+```
+
+2. Add some methods
+
+Use `func` to add some methods to a `struct`.
+
+```go
+// pass by reference: 
+// 传入的是指针，内部操作会影响传入的指针所指向的变量/对象
+func (node *Node) SetValue(value int) {
+	&node.value = value
+}
+
+// pass by value: 
+// 传入的是值，相当于把对象/变量拷贝一份，然后传入方法，内部改变不会影响外部的对象/变量
+func (node Node) Print() {
+    fmt.Println(node.value)
+}
+```
+
+### 1-18 Package
+
+1. One folder, one package
+2. The methods could be defined in different go files (in the same folder)
+3. `Public` var/method starts with `TopCase`
+4. `Private` var/method starts with `lowerCase`
