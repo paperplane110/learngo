@@ -138,3 +138,26 @@ func (node Node) Print() {
 2. The methods could be defined in different go files (in the same folder)
 3. `Public` var/method starts with `TopCase`
 4. `Private` var/method starts with `lowerCase`
+
+### 1-19 Extent the package
+
+1. 组合的方式
+2. 别名的方式
+
+### 1-20 Use embedding to extend the package
+
+...
+
+### 1-21 Package management
+
+#### History
+
+1. GOPATH
+2. GOVENDOR
+3. go mod (recommended)
+
+- Use `import` directly in the code to add a new package.
+- or `go get -u <package>`: install a package (the newest version)
+- or `go get -u <package>@<version>`: specify the version
+- `go mod tidy`: clean go.sum
+- `go build ./...`: build all go file and pull relative packages

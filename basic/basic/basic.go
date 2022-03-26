@@ -18,7 +18,7 @@ var (
 func variableZeroValue() {
 	var a int
 	var s string
-	fmt.Printf("%d %q\n", a, s)
+	fmt.Printf("%d %queue\n", a, s)
 }
 
 func variableInitialValue() {
